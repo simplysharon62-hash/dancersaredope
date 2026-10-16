@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dancers Are Dope</title>
+<meta name="description" content="Dancers Are Dope, the apparel line of The Dance District in Charlotte, North Carolina. Studio wear in black and tan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: a fashion-house page in pure black and white. Condensed type echoes the logo; one serif italic voice; photography carries all the color. */
+:root{
+  --white:#ffffff;
+  --paper:#f6f6f4;
+  --black:#0b0b0b;
+  --ink:#141414;
+  --grey:#6b6b6b;
+  --rule:#d9d9d6;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.6 var(--sans);font-stretch:100%;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(24px,var(--gutter-l));padding-right:max(24px,var(--gutter-r))}
+@media (max-width:600px){.wrap{padding-left:var(--gutter-l);padding-right:var(--gutter-r)}}
+.label{font:600 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;text-transform:none}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* top bar */
+.topbar{background:var(--black);color:var(--white)}
+.topbar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;padding-block:10px}
+.topbar a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.topbar a:hover{border-color:var(--white)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding-block:14px}
+.nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;padding-block:6px;border-bottom:1px solid transparent;transition:border-color .2s}
+.nav ul a:hover{border-color:var(--ink)}
+.brand{justify-self:center}
+.brand img{height:52px;width:auto}
+.nav-cta{justify-self:end}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:0 26px;font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--white);transition:background .25s,color .25s}
+.btn:hover{background:var(--white);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.btn.small{min-height:40px;padding:0 18px}
+.btn.light{border-color:var(--white);background:var(--white);color:var(--ink)}
+.btn.light:hover{background:transparent;color:var(--white)}
+@media (max-width:820px){
+  .nav{grid-template-columns:auto 1fr}
+  .nav ul{display:none}
+  .brand{justify-self:start}
+  .brand img{height:42px}
+}
+
+/* hero */
+.hero{border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
+.hero-grid>*{min-width:0}
+.hero-copy{display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding-block:64px 56px;padding-right:48px}
+.count{display:flex;gap:18px;color:var(--grey)}
+.count span:last-child{color:var(--ink)}
+.hero h1{margin:0;font-weight:900;font-stretch:62%;font-size:clamp(84px,13.5vw,196px);line-height:.84;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 .serif{display:block;font-size:.34em;line-height:1.1;margin-top:.28em;letter-spacing:-.005em}
+.hero p.lede{max-width:40ch;margin:0;font-size:18px;color:#333}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-photo{position:relative;background:var(--paper);min-height:560px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero-photo figcaption{position:absolute;left:20px;bottom:20px;background:var(--white);padding:10px 14px}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-copy{padding-right:0;padding-block:44px 40px;gap:32px}
+  .hero-photo{min-height:0;aspect-ratio:4/5;max-height:640px}
+}
+
+/* ticker */
+.ticker{background:var(--black);color:var(--white);overflow:hidden}
+.ticker-track{display:flex;width:max-content;animation:roll 42s linear infinite}
+.ticker span{padding:16px 28px;white-space:nowrap;font-weight:500;font-stretch:75%;font-size:15px;letter-spacing:.28em;text-transform:uppercase}
+.ticker span::after{content:"";display:inline-block;width:5px;height:5px;margin-left:56px;background:var(--white);vertical-align:middle;transform:rotate(45deg)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:48px}
+.sec-head>*{min-width:0}
+.sec-head h2{margin:10px 0 0;font-weight:900;font-stretch:62%;font-size:clamp(52px,7vw,96px);line-height:.88;text-transform:uppercase;text-wrap:balance}
+.sec-head h2 .serif{font-size:.62em}
+.sec-head p{margin:0;max-width:36ch;color:var(--grey)}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* collection */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.item{display:flex;flex-direction:column;gap:16px}
+.item .img{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--paper)}
+.item .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .35s}
+.item:hover .img img{transform:scale(1.03)}
+.item .img .tag{position:absolute;left:14px;top:14px;background:var(--white);padding:8px 10px}
+.item-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--ink);padding-top:14px}
+.item h3{margin:0;font-weight:800;font-stretch:75%;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+.item p{margin:0;color:var(--grey);font-size:15px}
+.spec{color:var(--grey)}
+.shades{display:flex;align-items:center;gap:18px}
+.shade{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--grey);padding-block:6px;border-bottom:1px solid transparent}
+.shade i{width:12px;height:12px;border-radius:50%;border:1px solid var(--ink)}
+.shade[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.shade:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.item-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.shop{font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding-block:6px;border-bottom:1px solid var(--ink)}
+
+/* statement */
+.statement{position:relative;padding:0;background:var(--black);color:var(--white)}
+.statement-img{position:relative;height:clamp(420px,58vw,720px);overflow:hidden}
+.statement-img img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;opacity:.86}
+.statement-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.92) 0%,rgba(11,11,11,.55) 42%,rgba(11,11,11,0) 72%)}
+.statement-copy{position:absolute;inset:0;display:flex;align-items:flex-end;z-index:1}
+.statement-copy .wrap{width:100%;padding-block:56px}
+.statement h2{margin:12px 0 22px;max-width:9ch;font-weight:900;font-stretch:62%;font-size:clamp(56px,8.5vw,128px);line-height:.86;text-transform:uppercase}
+.statement h2 .serif{display:block;font-size:.5em;line-height:1.1;margin-top:.2em}
+.statement p{max-width:38ch;margin:0 0 28px;color:#d6d6d6}
+@media (max-width:700px){
+  .statement-img{height:auto;aspect-ratio:3/4}
+  .statement-img img{object-position:70% 40%}
+  .statement-img::after{background:linear-gradient(0deg,rgba(11,11,11,.95) 0%,rgba(11,11,11,.6) 45%,rgba(11,11,11,.1) 80%)}
+}
+
+/* studio */
+.studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.studio-grid>*{min-width:0}
+.studio h2{margin:12px 0 22px;font-weight:900;font-stretch:62%;font-size:clamp(52px,7vw,96px);line-height:.88;text-transform:uppercase}
+.studio p{max-width:46ch;margin:0 0 18px;font-size:18px;color:#333}
+.facts{margin:0;display:grid;border-top:1px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding-block:20px;border-bottom:1px solid var(--rule)}
+.facts dt{color:var(--grey)}
+.facts dd{margin:0;font-size:17px;user-select:all}
+.facts dd a{text-decoration:none;border-bottom:1px solid var(--ink)}
+@media (max-width:820px){.studio-grid{grid-template-columns:1fr}.facts div{grid-template-columns:1fr;gap:6px}}
+
+/* footer */
+footer{background:var(--black);color:var(--white);padding-block:72px 40px}
+.foot-top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;padding-bottom:48px;border-bottom:1px solid #2a2a2a}
+.foot-top>*{min-width:0}
+.foot-top img{height:88px;width:auto}
+.foot-top .serif{display:block;font-size:28px;margin-top:22px;color:#e8e8e8}
+.social{display:flex;flex-wrap:wrap;gap:28px;list-style:none;margin:0;padding:0}
+.social a{text-decoration:none;padding-block:6px;border-bottom:1px solid transparent}
+.social a:hover{border-color:var(--white)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;color:#9a9a9a}
+@media (max-width:760px){.foot-top{grid-template-columns:1fr}}
+
+.hero-photo.pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--white)}
+.hero-photo.pair figure{position:relative;margin:0;overflow:hidden;background:var(--paper)}
+.hero-photo.pair img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo.pair figcaption{left:12px;bottom:12px}
+
+/* shades */
+.shades-sec{padding-top:0}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.duo>*{min-width:0}
+.duo figure{position:relative;margin:0;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--paper)}
+.duo img{width:100%;height:100%;object-fit:cover;object-position:68% 40%}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:end;gap:12px;padding:56px 22px 20px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:var(--white)}
+.duo figcaption b{font-weight:900;font-stretch:62%;font-size:clamp(40px,6vw,76px);line-height:.85;text-transform:uppercase}
+.duo figcaption a{color:var(--white);border-color:var(--white)}
+@media (max-width:700px){.duo{grid-template-columns:1fr}}
+
+/* lookbook */
+.look3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.look3 figure{position:relative;margin:0;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--paper)}
+.look3 img{width:100%;height:100%;object-fit:cover}
+.look3 figcaption{position:absolute;left:14px;bottom:14px;background:var(--white);padding:8px 10px}
+@media (max-width:760px){.look3{grid-template-columns:1fr 1fr}.look3 figure:last-child{grid-column:1 / -1;aspect-ratio:3/2}}
+
+/* customizer */
+.custom{background:var(--paper);border-block:1px solid var(--rule)}
+.cz{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.cz>*{min-width:0}
+.cz-view{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--white)}
+.cz-view img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.cz-view.wide{aspect-ratio:2/1}
+.cz-view .tag{position:absolute;left:14px;top:14px;background:var(--white);padding:8px 10px}
+.cz-step{border-top:1px solid var(--ink);padding-block:20px 26px}
+.cz-step h3{margin:0 0 14px;font-weight:800;font-stretch:75%;font-size:20px;letter-spacing:.04em;text-transform:uppercase;display:flex;justify-content:space-between;gap:12px}
+.cz-step h3 span{font:600 11px/1.6 var(--sans);letter-spacing:.2em;color:var(--grey)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--rule);background:var(--white);font:600 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.opt:hover{border-color:var(--ink)}
+.opt[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.opt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.opt i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.35);background-size:cover}
+.opt[aria-pressed="true"] i{border-color:rgba(255,255,255,.6)}
+.cz-sum{border-top:1px solid var(--ink);padding-top:22px;display:grid;gap:16px}
+.cz-sum p{margin:0;color:var(--grey);font-size:15px;max-width:44ch}
+.cz-sum strong{display:block;color:var(--ink);font-weight:800;font-stretch:75%;font-size:24px;text-transform:uppercase;letter-spacing:.02em}
+@media (max-width:900px){.cz{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap label">
+    <span>The official apparel line of The Dance District · Charlotte, NC</span>
+    <a href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop the store</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <nav aria-label="Main"><ul class="label">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#customize">Customize</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#studio">The Studio</a></li>
+    </ul></nav>
+    <a class="brand" href="#top" aria-label="Dancers Are Dope home"><img src="assets/logo-black.png" alt="Dancers Are Dope" width="900" height="449"></a>
+    <a class="btn small nav-cta" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop now</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="count label" aria-hidden="true"><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div>
+          <p class="label" style="margin:0 0 22px;color:var(--grey)">Collection 01 · Black &amp; Tan</p>
+          <h1>Dancers<br>Are Dope<span class="serif">Made for the ones who move.</span></h1>
+        </div>
+        <div style="display:grid;gap:28px">
+          <p class="lede">Studio wear from The Dance District in Charlotte. Hoodies, joggers, crop sets, leggings and tees in black and tan, each carrying the stacked mark.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop the collection</a>
+            <a class="btn ghost" href="#customize">Customize yours</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo pair">
+        <figure>
+          <img src="assets/var/hoodie-black-white.jpg" alt="Dancer in a black Dancers Are Dope hoodie and joggers" width="1024" height="1536" style="object-position:50% 22%">
+          <figcaption class="label">Black</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/var/hoodie-tan-black.jpg" alt="Dancer in a tan Dancers Are Dope hoodie and joggers with a black logo" width="1024" height="1536" style="object-position:50% 22%">
+          <figcaption class="label">Tan</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <section id="collection">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label" style="margin:0;color:var(--grey)">The Collection</p>
+          <h2>Two shades. <span class="serif">Black &amp; tan.</span></h2>
+        </div>
+        <p>Every piece is printed to order and ships from Printful. Choose a shade to see it, then shop it in the store.</p>
+      </div>
+      <div class="grid">
+        <article class="item">
+          <div class="img">
+            <img class="photo" src="assets/var/hoodie-black-white.jpg" data-black="assets/var/hoodie-black-white.jpg" data-tan="assets/var/hoodie-tan-black.jpg" data-item="hoodie and joggers" alt="Dancer wearing a black Dancers Are Dope hoodie and joggers" width="1024" height="1536" style="object-position:50% 30%">
+            <span class="tag label">After class</span>
+          </div>
+          <div class="item-row"><h3>The Hoodie Set</h3><span class="label spec">Hoodie + Jogger</span></div>
+          <p>Heavyweight fleece for warm-ups, cool-downs and the ride home. 8 in. chest print, small mark on the thigh.</p>
+          <div class="item-foot">
+            <div class="shades" role="group" aria-label="Shade">
+              <button class="shade" type="button" data-shade="black" aria-pressed="true"><i style="background:#141414"></i>Black</button>
+              <button class="shade" type="button" data-shade="tan" aria-pressed="false"><i style="background:#c8ac84"></i>Tan</button>
+            </div>
+            <a class="shop" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop</a>
+          </div>
+        </article>
+        <article class="item">
+          <div class="img">
+            <img class="photo" src="assets/var/studio-black-white.jpg" data-item="crop top and leggings" alt="Dancer wearing a black Dancers Are Dope crop top and leggings" width="1024" height="1536" style="object-position:50% 24%">
+            <span class="tag label">In class</span>
+          </div>
+          <div class="item-row"><h3>The Studio Set</h3><span class="label spec">Crop + Legging</span></div>
+          <p>A matched set that moves with you through class and rehearsal. Centered chest mark on the top, small mark on the back waistband of the leggings.</p>
+          <div class="item-foot">
+            <div class="shades" aria-label="Shade"><span class="shade" aria-pressed="true"><i style="background:#141414"></i>Black</span><span class="label spec">Tan coming soon</span></div>
+            <a class="shop" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop</a>
+          </div>
+        </article>
+        <article class="item">
+          <div class="img">
+            <img class="photo" src="assets/var/crew-black-white.jpg" data-black="assets/var/crew-black-white.jpg" data-tan="assets/var/crew-tan-brown.jpg" data-item="tees and hoodie" alt="Three dancers in black Dancers Are Dope tees and a hoodie" width="1774" height="887" style="object-position:66% 40%">
+            <span class="tag label">Every day</span>
+          </div>
+          <div class="item-row"><h3>The Tee</h3><span class="label spec">Tee + Sweatshirt</span></div>
+          <p>The everyday staple with room to move. 8 in. chest print.</p>
+          <div class="item-foot">
+            <div class="shades" role="group" aria-label="Shade">
+              <button class="shade" type="button" data-shade="black" aria-pressed="true"><i style="background:#141414"></i>Black</button>
+              <button class="shade" type="button" data-shade="tan" aria-pressed="false"><i style="background:#c8ac84"></i>Tan</button>
+            </div>
+            <a class="shop" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="shades-sec" aria-label="Black and tan">
+    <div class="wrap duo">
+      <figure>
+        <img src="assets/var/crew-black-white.jpg" alt="Three dancers wearing black Dancers Are Dope apparel with white logos" width="1774" height="887">
+        <figcaption><b>Black</b><a class="shop" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop black</a></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/var/crew-tan-brown.jpg" alt="Three dancers wearing tan Dancers Are Dope apparel with brown logos" width="1774" height="887">
+        <figcaption><b>Tan</b><a class="shop" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop tan</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="shades-sec" aria-label="Lookbook">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label" style="margin:0;color:var(--grey)">Lookbook</p>
+          <h2>Worn by everyone. <span class="serif">In both shades.</span></h2>
+        </div>
+        <p>Tees and hoodies in black and tan, with the logo printed to match each shade.</p>
+      </div>
+      <div class="look3">
+        <figure><img src="assets/models/man-black.jpg" alt="Man wearing a black Dancers Are Dope tee with a white logo" width="1122" height="1402" style="object-position:50% 30%"><figcaption class="label">The Tee · Black</figcaption></figure>
+        <figure><img src="assets/var/studio-black-white.jpg" alt="Dancer in a black Dancers Are Dope crop top and leggings" width="1024" height="1536" style="object-position:52% 24%"><figcaption class="label">The Studio Set · Black</figcaption></figure>
+        <figure><img src="assets/var/hoodie-tan-black.jpg" alt="Dancer in a tan Dancers Are Dope hoodie and joggers with a black logo" width="1024" height="1536" style="object-position:50% 24%"><figcaption class="label">The Hoodie Set · Tan</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="customize" class="custom">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="label" style="margin:0;color:var(--grey)">Customize</p>
+          <h2>Make it yours. <span class="serif">Shade and logo.</span></h2>
+        </div>
+        <p>Pick a piece, a shade and a logo color to see it on a dancer. Then order the same combination in the store.</p>
+      </div>
+      <div class="cz">
+        <div class="cz-view" id="czView">
+          <img id="czImg" src="assets/var/hoodie-black-white.jpg" alt="Preview of the black Hoodie Set with a white logo" width="1024" height="1536" style="object-position:50% 22%">
+          <span class="tag label" id="czTag">Preview</span>
+        </div>
+        <div>
+          <div class="cz-step"><h3>Piece <span id="czPieceName">Hoodie Set</span></h3><div class="opts" id="czPiece" role="group" aria-label="Piece"></div></div>
+          <div class="cz-step"><h3>Shade <span id="czShadeName">Black</span></h3><div class="opts" id="czShade" role="group" aria-label="Shade"></div></div>
+          <div class="cz-step"><h3>Logo color <span id="czInkName">White</span></h3><div class="opts" id="czInk" role="group" aria-label="Logo color"></div></div>
+          <div class="cz-sum">
+            <div><span class="label" style="color:var(--grey)">Your combination</span><strong id="czSum">Black Hoodie Set, white logo</strong></div>
+            <a class="btn" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Order this in the store</a>
+            <p>In the store, choose the same piece, shade and logo color.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="statement">
+    <div class="statement-img">
+      <img src="assets/var/crew-black-white.jpg" alt="Three dancers wearing Dancers Are Dope in a rehearsal studio" width="1774" height="887">
+    </div>
+    <div class="statement-copy">
+      <div class="wrap">
+        <p class="label" style="margin:0;color:#bdbdbd">The Story</p>
+        <h2>From the floor.<span class="serif">To everywhere after.</span></h2>
+        <p>Dancers Are Dope began as something to say out loud about the people who train for hours, stretch through the soreness and show up for the next rehearsal. Now it is something to wear.</p>
+        <a class="btn light" href="https://dancersaredope.square.site" target="_blank" rel="noopener">Shop the collection</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio" class="studio">
+    <div class="wrap studio-grid">
+      <div>
+        <p class="label" style="margin:0;color:var(--grey)">Made by the studio</p>
+        <h2>The Dance District</h2>
+        <p>Adult hip-hop, jazz and pro-style classes, plus rehearsal and rental space in Charlotte's South End. Dancers Are Dope is the studio's own apparel line.</p>
+        <div style="margin-top:30px"><a class="btn ghost" href="https://ncdancedistrict.com" target="_blank" rel="noopener">Visit the studio</a></div>
+      </div>
+      <dl class="facts">
+        <div><dt class="label">Studio</dt><dd>4109 Stuart Andrew Blvd, Suite A<br>Charlotte, NC 28217</dd></div>
+        <div><dt class="label">Phone</dt><dd>(980) 938-0213</dd></div>
+        <div><dt class="label">Website</dt><dd><a href="https://ncdancedistrict.com" target="_blank" rel="noopener">ncdancedistrict.com</a></dd></div>
+        <div><dt class="label">Store</dt><dd><a href="https://dancersaredope.square.site" target="_blank" rel="noopener">dancersaredope.square.site</a></dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img src="assets/logo-white.png" alt="Dancers Are Dope" width="900" height="449">
+        <span class="serif">Wear what you do.</span>
+      </div>
+      <ul class="social label">
+        <li><a href="https://www.instagram.com/ncdancedistrict" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@ncdancedistrict" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.youtube.com/ncdancedistrict" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/ncdancedistrict" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom label">
+      <span>© <span id="year">2026</span> Dancers Are Dope</span>
+      <span>An apparel line by The Dance District</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var words=['Hip-hop','Jazz','Pro-style','Breaking','House','Contemporary','Heels','Choreography'];
+  document.getElementById('ticker').innerHTML=words.concat(words).map(function(w){return '<span>'+w+'</span>';}).join('');
+  document.getElementById('year').textContent=new Date().getFullYear();
+  var PIECES={hoodie:{n:'Hoodie Set',pos:'50% 22%',wide:false,shades:['black','tan']},studio:{n:'Studio Set',pos:'52% 24%',wide:false,shades:['black']},crew:{n:'Tee + Hoodie',pos:'60% 40%',wide:true,shades:['black','tan']}};
+  var INKS={black:[['white','White','#f6f2ea'],['gold','Gold','linear-gradient(135deg,#7a5a1e,#d6b25e,#8c6a24)'],['tan','Tan','#cdb28a']],
+            tan:[['black','Black','#141414'],['brown','Brown','#4a2c18'],['white','White','#faf7f0']]};
+  var st={piece:'hoodie',shade:'black',ink:'white'};
+  function opts(id,list,cur,key){
+    var el=document.getElementById(id);
+    el.innerHTML=list.map(function(o){return '<button class="opt" type="button" data-v="'+o[0]+'" aria-pressed="'+(o[0]===cur)+'">'+(o[2]?'<i style="background:'+o[2]+'"></i>':'')+o[1]+'</button>';}).join('');
+    el.onclick=function(e){var b=e.target.closest('.opt');if(!b)return;st[key]=b.dataset.v;if(PIECES[st.piece].shades.indexOf(st.shade)<0){st.shade='black';}if(key!=='ink'&&!INKS[st.shade].some(function(i){return i[0]===st.ink;}))st.ink=INKS[st.shade][0][0];render();};
+  }
+  function render(){
+    var p=PIECES[st.piece],ink=INKS[st.shade].filter(function(i){return i[0]===st.ink;})[0];
+    opts('czPiece',[['hoodie','Hoodie Set'],['studio','Studio Set'],['crew','Tee + Hoodie']],st.piece,'piece');
+    opts('czShade',[['black','Black','#141414'],['tan','Tan','#c8ac84']].filter(function(o){return p.shades.indexOf(o[0])>=0;}),st.shade,'shade');
+    opts('czInk',INKS[st.shade],st.ink,'ink');
+    var img=document.getElementById('czImg');
+    img.src='assets/var/'+st.piece+'-'+st.shade+'-'+st.ink+'.jpg';
+    img.style.objectPosition=p.pos;
+    document.getElementById('czView').classList.toggle('wide',p.wide);
+    var shadeName=st.shade==='black'?'Black':'Tan';
+    img.alt='Preview of the '+shadeName.toLowerCase()+' '+p.n+' with a '+ink[1].toLowerCase()+' logo';
+    document.getElementById('czPieceName').textContent=p.n;
+    document.getElementById('czShadeName').textContent=shadeName;
+    document.getElementById('czInkName').textContent=ink[1];
+    document.getElementById('czSum').textContent=shadeName+' '+p.n+', '+ink[1].toLowerCase()+' logo';
+  }
+  render();
+  document.querySelectorAll('.item').forEach(function(card){
+    var photo=card.querySelector('.photo[data-tan]');
+    if(!photo) return;
+    card.querySelectorAll('button.shade').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var shade=btn.dataset.shade;
+        card.querySelectorAll('button.shade').forEach(function(b){b.setAttribute('aria-pressed',String(b===btn));});
+        photo.src=photo.dataset[shade];
+        photo.alt='Dancer wearing '+shade+' Dancers Are Dope '+photo.dataset.item;
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
